@@ -4,11 +4,12 @@ let areaInput = document.querySelector('#area')
 let calcButton = document.querySelector('#calcButton')
 
 //console.log(baseInput, heightInput, areaInput, calcButton)
-
-calcButton.addEventListener('click', () => {
+if(calcButton){
+    calcButton.addEventListener('click', () => {
     workInput()
     
-});
+    })
+}
 
 function workInput(){
     let base =Number(baseInput.value)
@@ -19,5 +20,18 @@ function workInput(){
 }
 
 function calcTriangleArea(base, height){
+    if(base <= 0 || height <=0){
+        throw new Error('Hiba! Az érték nem megfelelő!');
+    }
     return base * height /2;
+}
+
+function chekcInput(input){
+    //Szabályok kifejezések
+    let res= input.match(/^[0-9]$/);
+    if(res){
+        return true;
+    }else{
+        return false
+    }
 }
