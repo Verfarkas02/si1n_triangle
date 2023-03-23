@@ -28,8 +28,12 @@ describe('A calcTriangleArea() függvény tesztje', () => {
 });
 
 describe('A checkInput() tesztjei', () => {
-    it('Számot az input?', () => {
-        let actual =chekcInput('3');
+    it('Számot ad az input?', () => {
+        let actual =chekcInput('22');
         expect(actual).toBe(true);
+    });
+    it('Ha nem szám a bemenet, akkor false-t kapunk?', () => {
+        let actual = chekcInput('aa');
+        expect(actual).toBe(false);
     });
 });

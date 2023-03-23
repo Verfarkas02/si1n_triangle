@@ -28,7 +28,7 @@ function calcTriangleArea(base, height){
 
 function chekcInput(input){
     //Szabályok kifejezések
-    let res= input.match(/^[0-9]$/);
+    let res= input.match(/^[0-9]+$/);
     if(res){
         return true;
     }else{
